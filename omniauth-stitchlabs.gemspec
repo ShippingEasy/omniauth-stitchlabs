@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Theo Mills"]
   spec.email         = ["theo@shippingeasy.com"]
   spec.summary       = "StitchLabs OAuth2 strategy for OmniAuth"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/ShippingEasy/omniauth-stitchlabs"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
