@@ -1,29 +1,38 @@
-# Omniauth::Stitchlabs
+# OmniAuth StitchLabs
 
-TODO: Write a gem description
+StitchLabs OAuth2 Strategy for OmniAuth 1.0.
 
-## Installation
+## Installing
 
-Add this line to your application's Gemfile:
+Add to your `Gemfile`:
 
-    gem 'omniauth-stitchlabs'
+```ruby
+gem 'omniauth-stitchlabs'
+```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install omniauth-stitchlabs
+Then `bundle install`.
 
 ## Usage
 
-TODO: Write usage instructions here
+`OmniAuth::Strategies::StitchLabs` is simply a Rack middleware. Read [the OmniAuth 1.0 docs](https://github.com/intridea/omniauth) for detailed instructions.
 
-## Contributing
+Here's a quick example, adding the middleware to a Rails app in `config/initializers/omniauth.rb`:
 
-1. Fork it ( http://github.com/<my-github-username>/omniauth-stitchlabs/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :stitchlabs, ENV['SHOPIFY_API_KEY'], ENV['SHOPIFY_SHARED_SECRET']
+end
+```
+
+## Authentication Hash
+
+Here's an example *Authentication Hash* available in `request.env['omniauth.auth']`:
+
+```ruby
+{
+  :provider => 'shopify',
+  :credentials => {
+    :token => 'afasd923kjh0934kf', # OAuth 2.0 access_token, which you store and use to authenticate API requests
+  }
+}
+```
