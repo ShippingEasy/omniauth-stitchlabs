@@ -20,7 +20,7 @@ Here's a quick example, adding the middleware to a Rails app in `config/initiali
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :stitchlabs, ENV['SHOPIFY_API_KEY'], ENV['SHOPIFY_SHARED_SECRET']
+  provider :stitchlabs, ENV['STITCHLABS_API_KEY'], ENV['STITCHLABS_API_KEY']
 end
 ```
 
