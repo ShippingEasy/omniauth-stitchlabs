@@ -24,7 +24,7 @@ end
 use Rack::Session::Cookie
 
 use OmniAuth::Builder do
-  provider :stitchlabs, ENV['STITCHLABS_CLIENT_ID'], ENV['STITCHLABS_CLIENT_SECRET']
+  provider :stitchlabs, ENV['STITCHLABS_CLIENT_ID'], ENV['STITCHLABS_CLIENT_SECRET'], client_options: { site: "https://api.slbmj2010.com" }
 end
 
 run App.new
