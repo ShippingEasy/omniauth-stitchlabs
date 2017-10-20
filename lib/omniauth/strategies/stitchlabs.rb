@@ -5,9 +5,9 @@ module OmniAuth
     class StitchLabs < OmniAuth::Strategies::OAuth2
       option :name, "stitchlabs"
       option :client_options, {
-          :site => 'https://api.stitchlabs.com',
-          :authorize_url => '/oauth/authorize',
-          :token_url => '/oauth/access_token'
+          :site => 'https://api-pub.stitchlabs.com',
+          :authorize_url => '/authorize',
+          :token_url => '/oauth/token'
       }
     end
   end
